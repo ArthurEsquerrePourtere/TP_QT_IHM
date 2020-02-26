@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698 -->
+<html dir="ltr" lang="fr" xml:lang="fr" class="yui3-js-enabled"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>MU4IN203 - S2: Semaine 2 : TP Qt 1</title>
+    <link rel="shortcut icon" href="https://moodle-sciences.upmc.fr/moodle-2019/theme/image.php/boost/theme/1579268390/favicon">
+    
+<meta name="keywords" content="moodle, MU4IN203 - S2: Semaine 2 : TP Qt 1">
+<link rel="stylesheet" type="text/css" href="./MU4IN203 - S2_ Semaine 2 _ TP Qt 1_files/combo"><script charset="utf-8" id="yui_3_17_2_1_1580891602940_8" src="./MU4IN203 - S2_ Semaine 2 _ TP Qt 1_files/combo(1)" async=""></script><script charset="utf-8" id="yui_3_17_2_1_1580891602940_20" src="./MU4IN203 - S2_ Semaine 2 _ TP Qt 1_files/combo(2)" async=""></script><script id="firstthemesheet" type="text/css">/** Required in order to fix style inclusion problems in IE with YUI **/</script><link rel="stylesheet" type="text/css" href="./MU4IN203 - S2_ Semaine 2 _ TP Qt 1_files/styles.php">
+<script type="text/javascript">
+//<![CDATA[
+var M = {}; M.yui = {};
+M.pageloadstarttime = new Date();
+M.cfg = {"wwwroot":"https:\/\/moodle-sciences.upmc.fr\/moodle-2019","sesskey":"P7vk3qkR0K","themerev":"1579268390","slasharguments":1,"theme":"boost","iconsystemmodule":"core\/icon_system_fontawesome","jsrev":"1579268390","admin":"admin","svgicons":true,"usertimezone":"Europe\/Paris","contextid":681501};var yui1ConfigFn = function(me) {if(/-skin|reset|fonts|grids|base/.test(me.name)){me.type='css';me.path=me.path.replace(/\.js/,'.css');me.path=me.path.replace(/\/yui2-skin/,'/assets/skins/sam/yui2-skin')}};
+var yui2ConfigFn = function(me) {var parts=me.name.replace(/^moodle-/,'').split('-'),component=parts.shift(),module=parts[0],min='-min';if(/-(skin|core)$/.test(me.name)){parts.pop();me.type='css';min=''}
+if(module){var filename=parts.join('-');me.path=component+'/'+module+'/'+filename+min+'.'+me.type}else{me.path=component+'/'+component+'.'+me.type}};
+YUI_config = {"debug":false,"base":"https:\/\/moodle-sciences.upmc.fr\/moodle-2019\/lib\/yuilib\/3.17.2\/","comboBase":"https:\/\/moodle-sciences.upmc.fr\/moodle-2019\/theme\/yui_combo.php?","combine":true,"filter":null,"insertBefore":"firstthemesheet","groups":{"yui2":{"base":"https:\/\/moodle-sciences.upmc.fr\/moodle-2019\/lib\/yuilib\/2in3\/2.9.0\/build\/","comboBase":"https:\/\/moodle-sciences.upmc.fr\/moodle-2019\/theme\/yui_combo.php?","combine":true,"ext":false,"root":"2in3\/2.9.0\/build\/","patterns":{"yui2-":{"group":"yui2","configFn":yui1ConfigFn}}},"moodle":{"name":"moodle","base":"https:\/\/moodle-sciences.upmc.fr\/moodle-2019\/theme\/yui_combo.php?m\/1579268390\/","combine":true,"comboBase":"https:\/\/moodle-sciences.upmc.fr\/moodle-2019\/theme\/yui_combo.php?","ext":false,"root":"m\/1579268390\/","patterns":{"moodle-":{"group":"moodle","configFn":yui2ConfigFn}},"filter":null,"modules":{"moodle-core-formchangechecker":{"requires":["base","event-focus","moodle-core-event"]},"moodle-core-tooltip":{"requires":["base","node","io-base","moodle-core-notification-dialogue","json-parse","widget-position","widget-position-align","event-outside","cache-base"]},"moodle-core-event":{"requires":["event-custom"]},"moodle-core-lockscroll":{"requires":["plugin","base-build"]},"moodle-core-notification":{"requires":["moodle-core-notification-dialogue","moodle-core-notification-alert","moodle-core-notification-confirm","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-core-notification-dialogue":{"requires":["base","node","panel","escape","event-key","dd-plugin","moodle-core-widget-focusafterclose","moodle-core-lockscroll"]},"moodle-core-notification-alert":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-confirm":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-exception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-notification-ajaxexception":{"requires":["moodle-core-notification-dialogue"]},"moodle-core-dragdrop":{"requires":["base","node","io","dom","dd","event-key","event-focus","moodle-core-notification"]},"moodle-core-popuphelp":{"requires":["moodle-core-tooltip"]},"moodle-core-dock":{"requires":["base","node","event-custom","event-mouseenter","event-resize","escape","moodle-core-dock-loader","moodle-core-event"]},"moodle-core-dock-loader":{"requires":["escape"]},"moodle-core-checknet":{"requires":["base-base","moodle-core-notification-alert","io-base"]},"moodle-core-chooserdialogue":{"requires":["base","panel","moodle-core-notification"]},"moodle-core-handlebars":{"condition":{"trigger":"handlebars","when":"after"}},"moodle-core-blocks":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification"]},"moodle-core-maintenancemodetimer":{"requires":["base","node"]},"moodle-core-languninstallconfirm":{"requires":["base","node","moodle-core-notification-confirm","moodle-core-notification-alert"]},"moodle-core-actionmenu":{"requires":["base","event","node-event-simulate"]},"moodle-core_availability-form":{"requires":["base","node","event","event-delegate","panel","moodle-core-notification-dialogue","json"]},"moodle-backup-backupselectall":{"requires":["node","event","node-event-simulate","anim"]},"moodle-backup-confirmcancel":{"requires":["node","node-event-simulate","moodle-core-notification-confirm"]},"moodle-course-util":{"requires":["node"],"use":["moodle-course-util-base"],"submodules":{"moodle-course-util-base":{},"moodle-course-util-section":{"requires":["node","moodle-course-util-base"]},"moodle-course-util-cm":{"requires":["node","moodle-course-util-base"]}}},"moodle-course-categoryexpander":{"requires":["node","event-key"]},"moodle-course-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-course-coursebase","moodle-course-util"]},"moodle-course-formatchooser":{"requires":["base","node","node-event-simulate"]},"moodle-course-modchooser":{"requires":["moodle-core-chooserdialogue","moodle-course-coursebase"]},"moodle-course-management":{"requires":["base","node","io-base","moodle-core-notification-exception","json-parse","dd-constrain","dd-proxy","dd-drop","dd-delegate","node-event-delegate"]},"moodle-form-shortforms":{"requires":["node","base","selector-css3","moodle-core-event"]},"moodle-form-showadvanced":{"requires":["node","base","selector-css3"]},"moodle-form-passwordunmask":{"requires":[]},"moodle-form-dateselector":{"requires":["base","node","overlay","calendar"]},"moodle-question-qbankmanager":{"requires":["node","selector-css3"]},"moodle-question-chooser":{"requires":["moodle-core-chooserdialogue"]},"moodle-question-searchform":{"requires":["base","node"]},"moodle-question-preview":{"requires":["base","dom","event-delegate","event-key","core_question_engine"]},"moodle-availability_completion-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_date-form":{"requires":["base","node","event","io","moodle-core_availability-form"]},"moodle-availability_grade-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_group-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_grouping-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_profile-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-availability_role-form":{"requires":["base","node","event","moodle-core_availability-form"]},"moodle-qtype_stack-input":{"requires":["node","event-valuechange","moodle-core-event","io","json-parse"]},"moodle-mod_assign-history":{"requires":["node","transition"]},"moodle-mod_attendance-groupfilter":{"requires":["base","node"]},"moodle-mod_bigbluebuttonbn-recordings":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_bigbluebuttonbn-imports":{"requires":["base","node"]},"moodle-mod_bigbluebuttonbn-broker":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_bigbluebuttonbn-rooms":{"requires":["base","node","datasource-get","datasource-jsonschema","datasource-polling","moodle-core-notification"]},"moodle-mod_bigbluebuttonbn-modform":{"requires":["base","node"]},"moodle-mod_checklist-linkselect":{"requires":["node","event-valuechange"]},"moodle-mod_forum-subscriptiontoggle":{"requires":["base-base","io-base"]},"moodle-mod_quiz-util":{"requires":["node","moodle-core-actionmenu"],"use":["moodle-mod_quiz-util-base"],"submodules":{"moodle-mod_quiz-util-base":{},"moodle-mod_quiz-util-slot":{"requires":["node","moodle-mod_quiz-util-base"]},"moodle-mod_quiz-util-page":{"requires":["node","moodle-mod_quiz-util-base"]}}},"moodle-mod_quiz-dragdrop":{"requires":["base","node","io","dom","dd","dd-scroll","moodle-core-dragdrop","moodle-core-notification","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-base","moodle-mod_quiz-util-page","moodle-mod_quiz-util-slot","moodle-course-util"]},"moodle-mod_quiz-quizbase":{"requires":["base","node"]},"moodle-mod_quiz-autosave":{"requires":["base","node","event","event-valuechange","node-event-delegate","io-form"]},"moodle-mod_quiz-questionchooser":{"requires":["moodle-core-chooserdialogue","moodle-mod_quiz-util","querystring-parse"]},"moodle-mod_quiz-modform":{"requires":["base","node","event"]},"moodle-mod_quiz-toolboxes":{"requires":["base","node","event","event-key","io","moodle-mod_quiz-quizbase","moodle-mod_quiz-util-slot","moodle-core-notification-ajaxexception"]},"moodle-mod_quiz-repaginate":{"requires":["base","event","node","io","moodle-core-notification-dialogue"]},"moodle-mod_scheduler-studentlist":{"requires":["base","node","event","io"]},"moodle-mod_scheduler-saveseen":{"requires":["base","node","event"]},"moodle-mod_scheduler-delselected":{"requires":["base","node","event"]},"moodle-message_airnotifier-toolboxes":{"requires":["base","node","io"]},"moodle-block_xp-rulepicker":{"requires":["base","node","handlebars","moodle-core-notification-dialogue"]},"moodle-block_xp-filters":{"requires":["base","node","moodle-core-dragdrop","moodle-block_xp-rulepicker"]},"moodle-block_xp-notification":{"requires":["base","node","handlebars","button-plugin","moodle-core-notification-dialogue"]},"moodle-filter_glossary-autolinker":{"requires":["base","node","io-base","json-parse","event-delegate","overlay","moodle-core-event","moodle-core-notification-alert","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-filter_mathjaxloader-loader":{"requires":["moodle-core-event"]},"moodle-editor_atto-editor":{"requires":["node","transition","io","overlay","escape","event","event-simulate","event-custom","node-event-html5","node-event-simulate","yui-throttle","moodle-core-notification-dialogue","moodle-core-notification-confirm","moodle-editor_atto-rangy","handlebars","timers","querystring-stringify"]},"moodle-editor_atto-plugin":{"requires":["node","base","escape","event","event-outside","handlebars","event-custom","timers","moodle-editor_atto-menu"]},"moodle-editor_atto-menu":{"requires":["moodle-core-notification-dialogue","node","event","event-custom"]},"moodle-editor_atto-rangy":{"requires":[]},"moodle-format_grid-gridkeys":{"requires":["event-nav-keys"]},"moodle-report_eventlist-eventfilter":{"requires":["base","event","node","node-event-delegate","datatable","autocomplete","autocomplete-filters"]},"moodle-report_loglive-fetchlogs":{"requires":["base","event","node","io","node-event-delegate"]},"moodle-gradereport_grader-gradereporttable":{"requires":["base","node","event","handlebars","overlay","event-hover"]},"moodle-gradereport_history-userselector":{"requires":["escape","event-delegate","event-key","handlebars","io-base","json-parse","moodle-core-notification-dialogue"]},"moodle-tool_capability-search":{"requires":["base","node"]},"moodle-tool_lp-dragdrop-reorder":{"requires":["moodle-core-dragdrop"]},"moodle-tool_monitor-dropdown":{"requires":["base","event","node"]},"moodle-assignfeedback_editpdf-editor":{"requires":["base","event","node","io","graphics","json","event-move","event-resize","transition","querystring-stringify-simple","moodle-core-notification-dialog","moodle-core-notification-alert","moodle-core-notification-warning","moodle-core-notification-exception","moodle-core-notification-ajaxexception"]},"moodle-atto_accessibilitychecker-button":{"requires":["color-base","moodle-editor_atto-plugin"]},"moodle-atto_accessibilityhelper-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_align-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_bold-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_charmap-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_clear-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_collapse-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_emoticon-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_equation-button":{"requires":["moodle-editor_atto-plugin","moodle-core-event","io","event-valuechange","tabview","array-extras"]},"moodle-atto_html-codemirror":{"requires":["moodle-atto_html-codemirror-skin"]},"moodle-atto_html-button":{"requires":["promise","moodle-editor_atto-plugin","moodle-atto_html-beautify","moodle-atto_html-codemirror","event-valuechange"]},"moodle-atto_html-beautify":{},"moodle-atto_image-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_indent-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_italic-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_link-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_managefiles-usedfiles":{"requires":["node","escape"]},"moodle-atto_media-button":{"requires":["moodle-editor_atto-plugin","moodle-form-shortforms"]},"moodle-atto_noautolink-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_orderedlist-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_panoptobutton-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_recordrtc-button":{"requires":["moodle-editor_atto-plugin","moodle-atto_recordrtc-recording"]},"moodle-atto_recordrtc-recording":{"requires":["moodle-atto_recordrtc-button"]},"moodle-atto_rtl-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_strike-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_styles-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_subscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_superscript-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_table-button":{"requires":["moodle-editor_atto-plugin","moodle-editor_atto-menu","event","event-valuechange"]},"moodle-atto_title-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_underline-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_undo-button":{"requires":["moodle-editor_atto-plugin"]},"moodle-atto_unorderedlist-button":{"requires":["moodle-editor_atto-plugin"]}}},"gallery":{"name":"gallery","base":"https:\/\/moodle-sciences.upmc.fr\/moodle-2019\/lib\/yuilib\/gallery\/","combine":true,"comboBase":"https:\/\/moodle-sciences.upmc.fr\/moodle-2019\/theme\/yui_combo.php?","ext":false,"root":"gallery\/1579268390\/","patterns":{"gallery-":{"group":"gallery"}}}},"modules":{"core_filepicker":{"name":"core_filepicker","fullpath":"https:\/\/moodle-sciences.upmc.fr\/moodle-2019\/lib\/javascript.php\/1579268390\/repository\/filepicker.js","requires":["base","node","node-event-simulate","json","async-queue","io-base","io-upload-iframe","io-form","yui2-treeview","panel","cookie","datatable","datatable-sort","resize-plugin","dd-plugin","escape","moodle-core_filepicker","moodle-core-notification-dialogue"]},"core_comment":{"name":"core_comment","fullpath":"https:\/\/moodle-sciences.upmc.fr\/moodle-2019\/lib\/javascript.php\/1579268390\/comment\/comment.js","requires":["base","io-base","node","json","yui2-animation","overlay","escape"]},"mathjax":{"name":"mathjax","fullpath":"https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/mathjax\/2.7.2\/MathJax.js?delayStartupUntil=configured"}}};
+M.yui.loader = {modules: {}};
+
+//]]>
+</script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="core/first" src="./MU4IN203 - S2_ Semaine 2 _ TP Qt 1_files/requirejs.php"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    config: ["Accessible.js", "Safe.js"],
+    errorSettings: { message: ["!"] },
+    skipStartupTypeset: true,
+    messageStyle: "none"
+});
+</script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="jquery" src="./MU4IN203 - S2_ Semaine 2 _ TP Qt 1_files/javascript.php"></script></head>
+<body id="page-mod-page-view" class="format-topics  path-mod path-mod-page chrome dir-ltr lang-fr yui-skin-sam yui3-skin-sam moodle-sciences-upmc-fr--moodle-2019 pagelayout-incourse course-3971 context-681501 cmid-79698 category-14  jsenabled">
+
+<div id="page-wrapper">
+
+    <div>
+    <a class="sr-only sr-only-focusable" href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#maincontent">Passer au contenu principal</a>
+</div><script type="text/javascript" src="./MU4IN203 - S2_ Semaine 2 _ TP Qt 1_files/combo(3)"></script><script type="text/javascript" src="./MU4IN203 - S2_ Semaine 2 _ TP Qt 1_files/javascript(1).php"></script>
+<script type="text/javascript">
+//<![CDATA[
+document.body.className += ' jsenabled';
+//]]>
+</script>
+
+
+
+    <nav class="fixed-top navbar navbar-light bg-white navbar-expand moodle-has-zindex" aria-label="Navigation du site">
+    
+            <div data-region="drawer-toggle" class="d-inline-block mr-3">
+                <button aria-expanded="false" aria-controls="nav-drawer" type="button" class="btn nav-link float-sm-left mr-1 btn-light bg-gray" data-action="toggle-drawer" data-side="left" data-preference="drawer-open-nav"><i class="icon fa fa-bars fa-fw " aria-hidden="true"></i><span class="sr-only">Panneau latéral</span></button>
+            </div>
+    
+            <a href="https://moodle-sciences.upmc.fr/moodle-2019" class="navbar-brand has-logo
+                    ">
+                    <span class="logo d-none d-sm-inline">
+                        <img src="./MU4IN203 - S2_ Semaine 2 _ TP Qt 1_files/LOGO_SCIENCES_blanc_XS.png" alt="Moodle Sciences 2019">
+                    </span>
+                <span class="site-name d-none d-md-inline">Moodle Sciences 2019</span>
+            </a>
+    
+            <ul class="navbar-nav d-none d-md-flex">
+                <!-- custom_menu -->
+                <li class="dropdown nav-item">
+    <a class="dropdown-toggle nav-link" id="drop-down-5e3a6f4d523b75e3a6f4d4e13f6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#" aria-controls="drop-down-menu-5e3a6f4d523b75e3a6f4d4e13f6">
+        Français ‎(fr)‎
+    </a>
+    <div class="dropdown-menu" role="menu" id="drop-down-menu-5e3a6f4d523b75e3a6f4d4e13f6" aria-labelledby="drop-down-5e3a6f4d523b75e3a6f4d4e13f6">
+                <a class="dropdown-item" role="menuitem" href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698&amp;lang=en" title="English ‎(en)‎">English ‎(en)‎</a>
+                <a class="dropdown-item" role="menuitem" href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698&amp;lang=fr" title="Français ‎(fr)‎">Français ‎(fr)‎</a>
+    </div>
+</li>
+                <!-- page_heading_menu -->
+                
+            </ul>
+            <ul class="nav navbar-nav ml-auto">
+                <div class="d-none d-lg-block">
+                
+            </div>
+                <!-- navbar_plugin_output -->
+                <li class="nav-item">
+                <div class="pull-right popover-region collapsed">
+    <a id="message-drawer-toggle-5e3a6f4d53ec15e3a6f4d4e13f7" class="nav-link d-inline-block popover-region-toggle position-relative" href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#" role="button">
+        <i class="icon fa fa-comment fa-fw " title="Ouvrir/fermer le tiroir des messages" aria-label="Ouvrir/fermer le tiroir des messages"></i>
+        <div class="count-container hidden" data-region="count-container" aria-label="Il y a 0 conversations non lues">0</div>
+    </a>
+</div><div class="popover-region collapsed popover-region-notifications" id="nav-notification-popover-container" data-userid="36853" data-region="popover-region">
+    <div class="popover-region-toggle nav-link" data-region="popover-region-toggle" role="button" aria-controls="popover-region-container-5e3a6f4d55ad45e3a6f4d4e13f8" aria-haspopup="true" aria-label="Afficher la fenêtre des notifications sans nouvelle notification" tabindex="0">
+                <i class="icon fa fa-bell fa-fw " title="Ouvrir/fermer le menu notifications" aria-label="Ouvrir/fermer le menu notifications"></i>
+        <div class="count-container hidden" data-region="count-container" aria-label="Il y a 0 notifications non lues">0</div>
+
+    </div>
+    <div id="popover-region-container-5e3a6f4d55ad45e3a6f4d4e13f8" class="popover-region-container" data-region="popover-region-container" aria-expanded="false" aria-hidden="true" aria-label="Fenêtre de notification" role="region">
+        <div class="popover-region-header-container">
+            <h3 class="popover-region-header-text" data-region="popover-region-header-text">Notifications</h3>
+            <div class="popover-region-header-actions" data-region="popover-region-header-actions">        <a class="mark-all-read-button" href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#" title="Tout marquer comme lu" data-action="mark-all-read" role="button">
+            <span class="normal-icon"><i class="icon fa fa-check fa-fw " title="Tout marquer comme lu" aria-label="Tout marquer comme lu"></i></span>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+        </a>
+        <a href="https://moodle-sciences.upmc.fr/moodle-2019/message/notificationpreferences.php?userid=36853" title="Préférences de notification">
+            <i class="icon fa fa-cog fa-fw " title="Préférences de notification" aria-label="Préférences de notification"></i>
+        </a>
+</div>
+        </div>
+        <div class="popover-region-content-container" data-region="popover-region-content-container">
+            <div class="popover-region-content" data-region="popover-region-content">
+                        <div class="all-notifications" data-region="all-notifications" role="log" aria-busy="false" aria-atomic="false" aria-relevant="additions"></div>
+        <div class="empty-message" tabindex="0" data-region="empty-message">Vous n'avez pas de notification</div>
+
+            </div>
+            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+        </div>
+                <a class="see-all-link" href="https://moodle-sciences.upmc.fr/moodle-2019/message/output/popup/notifications.php">
+                    <div class="popover-region-footer-container">
+                        <div class="popover-region-seeall-text">Tout afficher</div>
+                    </div>
+                </a>
+    </div>
+</div>
+                </li>
+                <!-- user_menu -->
+                <li class="nav-item d-flex align-items-center">
+                    <div class="usermenu"><div class="action-menu moodle-actionmenu nowrap-items d-inline" id="action-menu-1" data-enhance="moodle-core-actionmenu">
+
+        <div class="menubar d-flex " id="action-menu-1-menubar" role="menubar">
+
+            
+
+
+                <div class="action-menu-trigger">
+                    <div class="dropdown">
+                        <a href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#" tabindex="0" class=" dropdown-toggle icon-no-margin" id="dropdown-1" aria-label="Menu utilisateur" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" aria-controls="action-menu-1-menu">
+                            
+                            <span class="userbutton"><span class="usertext mr-1">Arthur Esquerre-Pourtere</span><span class="avatars"><span class="avatar current"><img src="./MU4IN203 - S2_ Semaine 2 _ TP Qt 1_files/f2.png" class="userpicture defaultuserpic" width="35" height="35" role="presentation" aria-hidden="true"></span></span></span>
+                                
+                            <b class="caret"></b>
+                        </a>
+                            <div class="dropdown-menu dropdown-menu-right menu  align-tr-br" id="action-menu-1-menu" data-rel="menu-content" aria-labelledby="action-menu-toggle-1" role="menu" data-align="tr-br">
+                                        <a href="https://moodle-sciences.upmc.fr/moodle-2019/my/" class="dropdown-item menu-action" role="menuitem" data-title="mymoodle,admin" aria-labelledby="actionmenuaction-1">
+                                                <i class="icon fa fa-tachometer fa-fw " aria-hidden="true"></i>
+                                            <span class="menu-action-text" id="actionmenuaction-1">
+                                                Tableau de bord
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                        <a href="https://moodle-sciences.upmc.fr/moodle-2019/user/profile.php?id=36853" class="dropdown-item menu-action" role="menuitem" data-title="profile,moodle" aria-labelledby="actionmenuaction-2">
+                                                <i class="icon fa fa-user fa-fw " aria-hidden="true"></i>
+                                            <span class="menu-action-text" id="actionmenuaction-2">
+                                                Profil
+                                            </span>
+                                        </a>
+                                        <a href="https://moodle-sciences.upmc.fr/moodle-2019/grade/report/overview/index.php" class="dropdown-item menu-action" role="menuitem" data-title="grades,grades" aria-labelledby="actionmenuaction-3">
+                                                <i class="icon fa fa-table fa-fw " aria-hidden="true"></i>
+                                            <span class="menu-action-text" id="actionmenuaction-3">
+                                                Notes
+                                            </span>
+                                        </a>
+                                        <a href="https://moodle-sciences.upmc.fr/moodle-2019/message/index.php" class="dropdown-item menu-action" role="menuitem" data-title="messages,message" aria-labelledby="actionmenuaction-4">
+                                                <i class="icon fa fa-comment fa-fw " aria-hidden="true"></i>
+                                            <span class="menu-action-text" id="actionmenuaction-4">
+                                                Messages personnels
+                                            </span>
+                                        </a>
+                                        <a href="https://moodle-sciences.upmc.fr/moodle-2019/user/preferences.php" class="dropdown-item menu-action" role="menuitem" data-title="preferences,moodle" aria-labelledby="actionmenuaction-5">
+                                                <i class="icon fa fa-wrench fa-fw " aria-hidden="true"></i>
+                                            <span class="menu-action-text" id="actionmenuaction-5">
+                                                Préférences
+                                            </span>
+                                        </a>
+                                        <div class="dropdown-divider" role="presentation"><span class="filler">&nbsp;</span></div>
+                                        <a href="https://moodle-sciences.upmc.fr/moodle-2019/login/logout.php?sesskey=P7vk3qkR0K" class="dropdown-item menu-action" role="menuitem" data-title="logout,moodle" aria-labelledby="actionmenuaction-6">
+                                                <i class="icon fa fa-sign-out fa-fw " aria-hidden="true"></i>
+                                            <span class="menu-action-text" id="actionmenuaction-6">
+                                                Déconnexion
+                                            </span>
+                                        </a>
+                            </div>
+                    </div>
+                </div>
+
+        </div>
+
+</div></div>
+                </li>
+            </ul>
+            <!-- search_box -->
+    </nav>
+    
+
+    <div id="page" class="container-fluid">
+        <header id="page-header" class="row">
+    <div class="col-12 pt-3 pb-3">
+        <div class="card ">
+            <div class="card-body ">
+                <div class="d-flex">
+                    <div class="mr-auto">
+                        <div class="page-context-header"><div class="page-header-headings"><h1>Interaction Homme-Machine - S2</h1></div></div>
+                    </div>
+
+                </div>
+                <div class="d-flex flex-wrap">
+                    <div id="page-navbar">
+                        <nav role="navigation" aria-label="Barre de navigation">
+    <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="https://moodle-sciences.upmc.fr/moodle-2019/my/">Tableau de bord</a>
+                </li>
+                <li class="breadcrumb-item">Mes cours</li>
+                <li class="breadcrumb-item">
+                    <a href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=3971" title="Interaction Homme-Machine - S2">MU4IN203 - S2</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=3971#section-2">Travaux pratiques</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698" aria-current="page" title="Page">Semaine 2 : TP Qt 1</a>
+                </li>
+    </ol>
+</nav>
+                    </div>
+                    <div class="ml-auto d-flex">
+                        
+                    </div>
+                    <div id="course-header">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+        <div id="page-content" class="row pb-3">
+            <div id="region-main-box" class="col-12">
+                <section id="region-main">
+
+                    <span class="notifications" id="user-notifications"></span>
+                    <div role="main" id="yui_3_17_2_1_1580891602940_25"><span id="maincontent"></span><h2>Semaine 2 : TP Qt 1</h2><div class="box generalbox center clearfix py-3" id="yui_3_17_2_1_1580891602940_24"><div class="no-overflow" id="yui_3_17_2_1_1580891602940_23"><p></p><h2>Sujet</h2><p id="yui_3_17_2_1_1580891602940_26">Note préliminaire : il est préférable de lire chaque “étape” en entier<br>(en particulier les notes ou remarques) avant de la traiter. N'oubliez pas de montrer votre TP avant de partir afin d'être évalué.</p><p id="yui_3_17_2_1_1580891602940_22">Vous pouvez télécharger les ressources pour ce TP ici :&nbsp;<a href="http://hci.isir.upmc.fr/wp-content/uploads/2018/02/TP_QT1.zip" id="yui_3_17_2_1_1580891602940_21">TP_QT1</a></p><h3>1e Etape: Démarrage</h3><p>Ouvrir le fichier&nbsp;mainWindow.py&nbsp;avec votre éditeur de texte préféré</p><p>Créer une fonction&nbsp;<em>main(</em>args<em>)</em>&nbsp;qui sera appelé à partir du point d’entrée du programme (<em>if</em>&nbsp;__name__ == “__main__”:)</p><p>Afficher une trace dans la fonction main, à l’aide de la fonction&nbsp;<em>print</em>&nbsp;et vérifier que le programme s’exécute correctement dans la console (<em>python</em>&nbsp;mainwindow.py).</p><p><b>Q1: Que faut il ne pas oublier pour que le code s’execute?</b></p><p></p><h3>2e Etape: Créer une classe&nbsp;<em>MainWindow</em></h3><p id="yui_3_17_2_1_1580891602940_27">La classe&nbsp;<em>MainWindow</em>&nbsp;dérivera de&nbsp;<em>QMainWindow</em>. Ajouter une méthode&nbsp;<em>__init__()</em>&nbsp;qui ne fait rien pour le moment. Il faudra penser à rajouter&nbsp;<em>from PyQt5.QtWidgets import *</em></p><p>créer un instance de&nbsp;<em>MainWindow</em>&nbsp;dans la fonction main et afficher la fenêtre avec la méthode&nbsp;<em>show()</em>. Exécuter maintenant le code.</p><p><b>Q2: Pourquoi la fenêtre ne s’affiche pas? que faut il rajouter?</b></p><p></p><h3>3e Etape: rajouter des widgets à MainWindow</h3><p id="yui_3_17_2_1_1580891602940_28">Pour l’instant&nbsp;<em>MainWindow</em>&nbsp;ne fait pas grand chose de plus que&nbsp;QMainWindow.<br>En s’inspirant du cours créer une barre de menu (à l’aide de la méthode&nbsp;<em>menuBar()&nbsp;</em>de&nbsp;QMainWindow) avec un menu déroulant “Fichier” (à l’aide la méthode&nbsp;<em>addMenu()&nbsp;</em>de la classe&nbsp;QMenuBar) contenant trois items pour activer les commandes<br>“Open…”, “Save…” et “Quit…”. Créer également une barre d’outils<br>permettant d’activer les mêmes commandes. Utiliser les&nbsp;<em>QAction</em><br>en spécifiant les accélérateurs clavier et bulles d’aides appropriés<br>(vous disposez de 3 fichiers .png contenant les images des<br>icones de ces commandes). Implémenter que ces trois actions pour pouvoir avancer rapidement dans le TP.</p><p id="yui_3_17_2_1_1580891602940_31">Finalement, faire en sorte que la zone centrale de la MainWindow soit un<br><em id="yui_3_17_2_1_1580891602940_32">QTextEdit</em>&nbsp;à l’aide de la méthode&nbsp;<em>setCentralWidget()</em></p><p id="yui_3_17_2_1_1580891602940_30">Option 1: Créer une barre de status en appelant la méthode&nbsp;<em id="yui_3_17_2_1_1580891602940_29">statusBar()</em>&nbsp;de la classe&nbsp;<em>QMainWindow</em>.</p><p>Option 2: Un fichier&nbsp;Resource.qrc&nbsp;vous a été fourni. Éditer et compiler ce fichier avec&nbsp;pyrcc5&nbsp;(ou&nbsp;pyrcc4) pour accéder à l’une des icones dans votre code à l’aide du ‘:‘.</p><h3 id="yui_3_17_2_1_1580891602940_34">4e Etape: définir et connecter les slots</h3><p id="yui_3_17_2_1_1580891602940_33">Déclarer et implémenter les slots&nbsp;<em>openFile</em>(),&nbsp;<em>saveFile</em>()<br>et&nbsp;<em>quitApp</em>().<br>Pour l’instant ils se contenteront d’afficher un message (e.g. le nom du slot)<br>sur la console. Connecter les slots aux actions correspondantes. Tester.</p><p><b>Q4: Comment connecter les actions aux slots ?</b></p><p></p><h3 id="yui_3_17_2_1_1580891602940_37">5e Etape: ouvrir une boîte de dialogue pour sélectionner un fichier</h3><p id="yui_3_17_2_1_1580891602940_36">On va maintenant faire en sorte que les slots&nbsp;<em>openFile</em>()<br>et&nbsp;<em>saveFile</em>()&nbsp;ouvrent des boîtes de dialogue permettant de récupérer<br>un nom de fichier. C’est le rôle du widget&nbsp;<em id="yui_3_17_2_1_1580891602940_35">QFileDialog</em>, qui peut<br>être utilisé de plusieurs manières. En s’inspirant du cours, choisir la technique&nbsp;la plus simple, tant pour ouvrir un “Open” qu’un “Save” Dialog.<br>Recupérer le nom du fichier sélectionné et l’afficher sur la console.</p><h3>6e Etape: ouvrir / sauver une page HTML</h3><p>On va maintenant rajouter le code nécessaire dans le slot&nbsp;<em>openFile</em>()<br>pour lire le fichier (texte ou HTML) sélectionné via la boîte de dialogue&nbsp;et faire apparaître son contenu dans le&nbsp;<em>QTextEdit</em>.<br>On aurait pu utiliser un&nbsp;<em>QFile</em>&nbsp;et un&nbsp;<em>QTextStream</em>&nbsp;pour<br>lire le fichier, mais il est préférable d'utiliser l'API Python classique. Ce contenu sera alors affecté au&nbsp;<em>QTextEdit&nbsp;</em>via sa méthode&nbsp;<em>setHtml()</em>. Cette méthode suppose que le contenu soit du HTML<br>(pour du texte brut on utiliserait plutot&nbsp;setPlainText()).</p><p>Inversement, en suivant la même logique, faire en sorte que le slot&nbsp;<em>saveFile</em>()&nbsp;sauvegarde le contenu du&nbsp;<em>QTextEdit</em>&nbsp;dans le fichier indiqué par la&nbsp;boîte de dialogue.</p><p><b>Q6: Le code ne s’execute pas correctement?Comment résoudre ce problème?</b></p><p></p><h3>7e Etape: ouvrir une boîte de dialogue pour demander confirmation</h3><p>Faire en sorte qu’appuyer sur le bouton&nbsp;<em>Quit</em>&nbsp;ait pour effet d’ouvrir<br>un&nbsp;<em>QMessageBox</em>&nbsp;comportant des boutons “Yes” et “No”<br>permettant de demander confirmation avant de sortir de l’application. Vous pouvez utiliser la méthode&nbsp;<em>question()</em>.</p><h3>8e Etape: demander confirmation dans tous les cas</h3><p>L’étape précédente comporte une faille. En effet, l’utilisateur peut aussi&nbsp;quitter le programme en cliquant sur le bouton présent sur la<br>barre de la fenêtre (généralement une croix, ou un bouton rouge).<br>Modifier la&nbsp;<em>MainWindow</em>&nbsp;de telle sorte que cette action ait le même effet<br>que lorsqu’on clique sur le bouton&nbsp;<em>Quit</em>, c’est-à-dire ouvrir une boîte<br>de dialogue pour demander confirmation.<br>(Indication : il faudra redéfinir&nbsp;<em>QWidget.closeEvent</em>()&nbsp;et ignorer l’évenement).</p><h3>9e Etape</h3><p>Intégrez dans votre application quelques éléments graphiques (widgets) vus dans les slides (QLabel, QPushButton, etc.). Vous pouvez utiliser un QWidget comme "container".</p><p></p><h3>10e Etape</h3><p></p><p>Vous pouvez tester&nbsp;QDesigner&nbsp;s’il vous reste du temps et ajouter des éléments graphiques dans votre interface (Dock, label, etc.)</p><br><br><p></p></div></div><div class="modified">Modifié le: mardi 4 février 2020, 21:24</div></div>
+                    <div class="m-t-2 m-b-1 activity-navigation">
+<div class="row">
+    <div class="col-md-4">        <div class="pull-left">
+                <a href="https://moodle-sciences.upmc.fr/moodle-2019/mod/resource/view.php?id=79674&amp;forceview=1" id="prev-activity-link" class="btn btn-link" title="semaine 2 : PyQt Introduction">◄ semaine 2 : PyQt Introduction</a>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="mdl-align">
+            <div class="urlselect">
+    <form method="post" action="https://moodle-sciences.upmc.fr/moodle-2019/course/jumpto.php" class="form-inline" id="url_select_f5e3a6f4d4e13f17">
+        <input type="hidden" name="sesskey" value="P7vk3qkR0K">
+            <label for="jump-to-activity" class="sr-only">
+                Aller à…
+            </label>
+        <select id="jump-to-activity" class="custom-select urlselect" name="jump">
+                    <option value="" selected="">Aller à…</option>
+                    <option value="/mod/forum/view.php?id=70406&amp;forceview=1">Annonces</option>
+                    <option value="/mod/resource/view.php?id=78474&amp;forceview=1">Introduction au cours d'IHM</option>
+                    <option value="/mod/resource/view.php?id=79705&amp;forceview=1">Planning prévisionnel</option>
+                    <option value="/mod/resource/view.php?id=78468&amp;forceview=1">semaine 1. HCI: What and Why?</option>
+                    <option value="/mod/resource/view.php?id=78471&amp;forceview=1">semaine 1 : L'histoire de l'IHM</option>
+                    <option value="/mod/resource/view.php?id=82076&amp;forceview=1">semaine 2 : CCU - Introduction </option>
+                    <option value="/mod/resource/view.php?id=82079&amp;forceview=1">semaine 2 : CCU-besoins utilisateurs</option>
+                    <option value="/mod/resource/view.php?id=82081&amp;forceview=1">semaine 2 : CCU - Innovation</option>
+                    <option value="/mod/resource/view.php?id=79674&amp;forceview=1">semaine 2 : PyQt Introduction</option>
+                    <option value="/mod/resource/view.php?id=82242&amp;forceview=1">semaine 3 : PyQt - Dessin</option>
+                    <option value="/mod/page/view.php?id=82234&amp;forceview=1">semaine 3 : TME Qt</option>
+                    <option value="/mod/page/view.php?id=81010&amp;forceview=1">Description du projet</option>
+        </select>
+            <noscript>
+                <input type="submit" class="btn btn-secondary" value="Valider">
+            </noscript>
+    </form>
+</div>
+
+        </div>
+</div>
+    <div class="col-md-4">        <div class="pull-right">
+                <a href="https://moodle-sciences.upmc.fr/moodle-2019/mod/resource/view.php?id=82242&amp;forceview=1" id="next-activity-link" class="btn btn-link" title="semaine 3 : PyQt - Dessin">semaine 3 : PyQt - Dessin ►</a>
+
+        </div>
+</div>
+</div>
+</div>
+                    
+
+                </section>
+            </div>
+        </div>
+    </div>
+    <div id="message-drawer-5e3a6f4d585c05e3a6f4d4e13f18" class="message-drawer bg-light hidden" aria-expanded="false" aria-hidden="true" data-region="message-drawer" role="region">
+    <div class="header-container position-relative" data-region="header-container">
+        <div class="hidden border-bottom px-2 py-3" aria-hidden="true" data-region="view-contacts">
+            <div class="d-flex align-items-center">
+                <div class="align-self-stretch">
+                    <a class="h-100 d-flex align-items-center mr-2" href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#" data-route-back="" role="button">
+                        <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                        <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>                    </a>
+                </div>
+                <div>
+                    Contacts
+                </div>
+                <div class="ml-auto">
+                    <a href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#" data-route="view-search" role="button" aria-label="Recherche">
+                        <i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+        </div>        
+        <div class="hidden bg-white position-relative border-bottom px-2 py-2" aria-hidden="true" data-region="view-conversation">
+            <div class="hidden" data-region="header-content"></div>
+            <div class="hidden" data-region="header-edit-mode">
+                
+                <div class="d-flex p-2 align-items-center">
+                    Messages sélectionnés&nbsp;:
+                    <span class="ml-1" data-region="message-selected-court">1</span>
+                    <button type="button" class="ml-auto close" aria-label="Annuler la sélection de message" data-action="cancel-edit-mode">
+                            <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+            </div>
+            <div data-region="header-placeholder">
+                <div class="d-flex">
+                    <div class="align-self-stretch">
+                        <a class="h-100 mr-2 d-flex align-items-center" href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#" data-route-back="" role="button">
+                            <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                            <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>                        </a>
+                    </div>
+                    <div class="ml-2 rounded-circle bg-pulse-grey align-self-center" style="height: 38px; width: 38px">
+                    </div>
+                    <div class="ml-2 " style="flex: 1">
+                        <div class="mt-1 bg-pulse-grey w-75" style="height: 16px;">
+                        </div>
+                    </div>
+                    <div class="ml-2 bg-pulse-grey align-self-center" style="height: 16px; width: 20px">
+                    </div>
+                </div>
+            </div>
+            <div class="hidden position-absolute" data-region="confirm-dialogue-container" style="top: 0; bottom: -1px; right: 0; left: 0; background: rgba(0,0,0,0.3);"></div>
+        </div>        <div class="border-bottom px-2 py-3" aria-hidden="false" data-region="view-overview">
+            <div class="d-flex align-items-center">
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text pr-0 bg-white">
+                            <i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <input type="text" class="form-control border-left-0" placeholder="Recherche" aria-label="Recherche" data-region="view-overview-search-input">
+                </div>
+                <div class="ml-2">
+                    <a href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#" data-route="view-settings" data-route-param="36853" aria-label="Réglages" role="button">
+                        <i class="icon fa fa-cog fa-fw " aria-hidden="true"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="text-right mt-3">
+                <a href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#" data-route="view-contacts" role="button">
+                    <i class="icon fa fa-user fa-fw " aria-hidden="true"></i>
+                    Contacts
+                    <span class="badge bg-primary ml-2 hidden" data-region="contact-request-count" aria-label="Il y a 0 demandes de contact en attente">
+                        0
+                    </span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hidden border-bottom px-2 py-3 view-search" aria-hidden="true" data-region="view-search">
+            <div class="d-flex align-items-center">
+                <a class="mr-2 align-self-stretch d-flex align-items-center" href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#" data-route-back="" data-action="cancel-search" role="button">
+                    <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                    <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>                </a>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Recherche" aria-label="Recherche" data-region="search-input">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button" data-action="search" aria-label="Recherche">
+                            <span data-region="search-icon-container">
+                                <i class="icon fa fa-search fa-fw " aria-hidden="true"></i>
+                            </span>
+                            <span class="hidden" data-region="loading-icon-container">
+                                <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <div class="hidden border-bottom px-2 py-3" aria-hidden="true" data-region="view-settings">
+            <div class="d-flex align-items-center">
+                <div class="align-self-stretch">
+                    <a class="h-100 d-flex mr-2 align-items-center" href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#" data-route-back="" role="button">
+                        <span class="dir-rtl-hide"><i class="icon fa fa-chevron-left fa-fw " aria-hidden="true"></i></span>
+                        <span class="dir-ltr-hide"><i class="icon fa fa-chevron-right fa-fw " aria-hidden="true"></i></span>                    </a>
+                </div>
+                <div>
+                    Paramètres
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="body-container position-relative" data-region="body-container">
+        
+        <div class="hidden" data-region="view-contact" aria-hidden="true">
+            <div class="p-2 pt-3" data-region="content-container"></div>
+        </div>        <div class="hidden h-100" data-region="view-contacts" aria-hidden="true" data-user-id="36853">
+            <div class="d-flex flex-column h-100">
+                <div class="p-3 border-bottom">
+                    <ul class="nav nav-pills nav-fill" role="tablist">
+                        <li class="nav-item">
+                            <a id="contacts-tab-5e3a6f4d585c05e3a6f4d4e13f18" class="nav-link active" href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#contacts-tab-panel-5e3a6f4d585c05e3a6f4d4e13f18" data-toggle="tab" data-action="show-contacts-section" role="tab" aria-controls="contacts-tab-panel-5e3a6f4d585c05e3a6f4d4e13f18" aria-selected="true">
+                                Contacts
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a id="requests-tab-5e3a6f4d585c05e3a6f4d4e13f18" class="nav-link" href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#requests-tab-panel-5e3a6f4d585c05e3a6f4d4e13f18" data-toggle="tab" data-action="show-requests-section" role="tab" aria-controls="requests-tab-panel-5e3a6f4d585c05e3a6f4d4e13f18" aria-selected="false">
+                                Demandes
+                                <span class="badge bg-primary ml-2 hidden" data-region="contact-request-count" aria-label="Il y a 0 demandes de contact en attente">
+                                    0
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content d-flex flex-column h-100">
+                            <div class="tab-pane fade show active h-100 lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="36853" id="contacts-tab-panel-5e3a6f4d585c05e3a6f4d4e13f18" data-section="contacts" role="tabpanel" aria-labelledby="contacts-tab-5e3a6f4d585c05e3a6f4d4e13f18">
+        
+            
+            <div class="hidden text-center p-2" data-region="empty-message-container">
+                Aucun contact
+            </div>
+            <div class="hidden list-group" data-region="content-container">
+                
+            </div>
+            <div class="list-group" data-region="placeholder-container">
+                
+            </div>
+            <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+            </div>
+        </div>
+        
+                            <div class="tab-pane fade h-100 lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="36853" id="requests-tab-panel-5e3a6f4d585c05e3a6f4d4e13f18" data-section="requests" role="tabpanel" aria-labelledby="requests-tab-5e3a6f4d585c05e3a6f4d4e13f18">
+        
+            
+            <div class="hidden text-center p-2" data-region="empty-message-container">
+                Aucune demande de contact
+            </div>
+            <div class="hidden list-group" data-region="content-container">
+                
+            </div>
+            <div class="list-group" data-region="placeholder-container">
+                
+            </div>
+            <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+            </div>
+        </div>
+                </div>
+            </div>
+        </div>        
+        <div class="view-conversation hidden h-100" aria-hidden="true" data-region="view-conversation" data-user-id="36853" data-midnight="1580857200" data-message-poll-min="10" data-message-poll-max="120" data-message-poll-after-max="300" style="overflow-y: auto; overflow-x: hidden">
+            <div class="position-relative h-100" data-region="content-container" style="overflow-y: auto; overflow-x: hidden">
+                <div class="content-message-container hidden h-100 px-2 pt-0" data-region="content-message-container" role="log" style="overflow-y: auto; overflow-x: hidden">
+                    <div class="py-3 bg-light sticky-top z-index-1 border-bottom text-center hidden" data-region="contact-request-sent-message-container">
+                        <p class="m-0">Demande de contact envoyée</p>
+                        <p class="font-italic font-weight-light" data-region="text"></p>
+                    </div>
+                    <div class="hidden text-center p-3" data-region="more-messages-loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</div>
+                </div>
+                <div class="p-4 w-100 h-100 hidden position-absolute" data-region="confirm-dialogue-container" style="top: 0; background: rgba(0,0,0,0.3);">
+                    
+                    <div class="p-3 bg-white" data-region="confirm-dialogue" role="alert">
+                        <h3 class="h6 hidden" data-region="dialogue-header"></h3>
+                        <p class="text-muted" data-region="dialogue-text"></p>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-block">
+                            <span data-region="dialogue-button-text">Bloc</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-unblock">
+                            <span data-region="dialogue-button-text">Débloquer</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-remove-contact">
+                            <span data-region="dialogue-button-text">Supprimer</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-add-contact">
+                            <span data-region="dialogue-button-text">Ajouter</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-selected-messages">
+                            <span data-region="dialogue-button-text">Supprimer</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="confirm-delete-conversation">
+                            <span data-region="dialogue-button-text">Supprimer</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="request-add-contact">
+                            <span data-region="dialogue-button-text">Envoyer une demande de contact</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-primary btn-block hidden" data-action="accept-contact-request">
+                            <span data-region="dialogue-button-text">Accepter et ajouter aux contacts</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-block hidden" data-action="decline-contact-request">
+                            <span data-region="dialogue-button-text">Décliner</span>
+                            <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        </button>
+                        <button type="button" class="btn btn-secondary btn-block" data-action="cancel-confirm">Annuler</button>
+                    </div>
+                </div>
+                <div class="px-2 pb-2 pt-0" data-region="content-placeholder">
+                    <div class="h-100 d-flex flex-column">
+                        <div class="px-2 pb-2 pt-0 bg-light h-100" style="overflow-y: auto">
+                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                            <div class="mt-4">
+                                <div class="mb-4">
+                                    <div class="mx-auto bg-white" style="height: 25px; width: 100px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                                <div class="d-flex flex-column p-2 bg-white rounded mb-2">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <div class="mr-2">
+                                            <div class="rounded-circle bg-pulse-grey" style="height: 35px; width: 35px"></div>
+                                        </div>
+                                        <div class="mr-4 w-75 bg-pulse-grey" style="height: 16px"></div>
+                                        <div class="ml-auto bg-pulse-grey" style="width: 35px; height: 16px"></div>
+                                    </div>
+                                    <div class="bg-pulse-grey w-100" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-100 mt-2" style="height: 16px"></div>
+                                    <div class="bg-pulse-grey w-75 mt-2" style="height: 16px"></div>
+                                </div>
+                            </div>                        </div>
+                    </div>                </div>
+            </div>
+        </div>
+        
+        <div class="hidden" aria-hidden="true" data-region="view-group-info">
+            <div class="pt-3 h-100 d-flex flex-column" data-region="group-info-content-container" style="overflow-y: auto"></div>
+        </div>        <div class="h-100 view-overview-body" aria-hidden="false" data-region="view-overview" data-user-id="36853">
+            <div id="message-drawer-view-overview-container" class="d-flex flex-column h-100" style="overflow-y: auto">
+                    
+                    
+                    <div class="section border-0 card" data-region="view-overview-favourites">
+                        <div id="view-overview-favourites-toggle" class="card-header p-0" data-region="toggle">
+                            <button class="btn btn-link w-100 text-left p-2 d-flex align-items-center overview-section-toggle collapsed" data-toggle="collapse" data-target="#view-overview-favourites-target" aria-expanded="false" aria-controls="view-overview-favourites-target">
+                                <span class="collapsed-icon-container">
+                                    <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"></i>
+                                </span>
+                                <span class="expanded-icon-container">
+                                    <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"></i>
+                                </span>
+                                <span class="font-weight-bold">Favori</span>
+                                <small class="hidden ml-1" data-region="section-total-count-container" aria-label=" conversations">
+                                    (<span data-region="section-total-count"></span>)
+                                </small>
+                                <span class="hidden ml-2" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+                                </span>
+                                <span class="hidden badge badge-pill badge-primary ml-auto bg-primary" data-region="section-unread-count">
+                                    
+                                </span>
+                            </button>
+                        </div>
+                                            <div class="collapse border-bottom  lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="36853" id="view-overview-favourites-target" aria-labelledby="view-overview-favourites-toggle" data-parent="#message-drawer-view-overview-container">
+                    
+                        
+                        <div class="hidden text-center p-2" data-region="empty-message-container">
+                                    <p class="text-muted mt-2">Aucune conversation favorite</p>
+
+                        </div>
+                        <div class="hidden list-group" data-region="content-container">
+                            
+                        </div>
+                        <div class="list-group" data-region="placeholder-container">
+                                    <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</div>
+
+                        </div>
+                        <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    
+                    <div class="section border-0 card" data-region="view-overview-group-messages">
+                        <div id="view-overview-group-messages-toggle" class="card-header p-0" data-region="toggle">
+                            <button class="btn btn-link w-100 text-left p-2 d-flex align-items-center overview-section-toggle collapsed" data-toggle="collapse" data-target="#view-overview-group-messages-target" aria-expanded="false" aria-controls="view-overview-group-messages-target">
+                                <span class="collapsed-icon-container">
+                                    <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"></i>
+                                </span>
+                                <span class="expanded-icon-container">
+                                    <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"></i>
+                                </span>
+                                <span class="font-weight-bold">Groupe</span>
+                                <small class="hidden ml-1" data-region="section-total-count-container" aria-label=" conversations">
+                                    (<span data-region="section-total-count"></span>)
+                                </small>
+                                <span class="hidden ml-2" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+                                </span>
+                                <span class="hidden badge badge-pill badge-primary ml-auto bg-primary" data-region="section-unread-count">
+                                    
+                                </span>
+                            </button>
+                        </div>
+                                            <div class="collapse border-bottom  lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="36853" id="view-overview-group-messages-target" aria-labelledby="view-overview-group-messages-toggle" data-parent="#message-drawer-view-overview-container">
+                    
+                        
+                        <div class="hidden text-center p-2" data-region="empty-message-container">
+                                    <p class="text-muted mt-2">Pas de conversation de groupe</p>
+
+                        </div>
+                        <div class="hidden list-group" data-region="content-container">
+                            
+                        </div>
+                        <div class="list-group" data-region="placeholder-container">
+                                    <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</div>
+
+                        </div>
+                        <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+                        </div>
+                    </div>
+                    </div>
+                    
+                    
+                    <div class="section border-0 card" data-region="view-overview-messages">
+                        <div id="view-overview-messages-toggle" class="card-header p-0" data-region="toggle">
+                            <button class="btn btn-link w-100 text-left p-2 d-flex align-items-center overview-section-toggle collapsed" data-toggle="collapse" data-target="#view-overview-messages-target" aria-expanded="false" aria-controls="view-overview-messages-target">
+                                <span class="collapsed-icon-container">
+                                    <i class="icon fa fa-caret-right fa-fw " aria-hidden="true"></i>
+                                </span>
+                                <span class="expanded-icon-container">
+                                    <i class="icon fa fa-caret-down fa-fw " aria-hidden="true"></i>
+                                </span>
+                                <span class="font-weight-bold">Privée</span>
+                                <small class="hidden ml-1" data-region="section-total-count-container" aria-label=" conversations">
+                                    (<span data-region="section-total-count"></span>)
+                                </small>
+                                <span class="hidden ml-2" data-region="loading-icon-container">
+                                    <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+                                </span>
+                                <span class="hidden badge badge-pill badge-primary ml-auto bg-primary" data-region="section-unread-count">
+                                    
+                                </span>
+                            </button>
+                        </div>
+                                            <div class="collapse border-bottom  lazy-load-list" aria-live="polite" data-region="lazy-load-list" data-user-id="36853" id="view-overview-messages-target" aria-labelledby="view-overview-messages-toggle" data-parent="#message-drawer-view-overview-container">
+                    
+                        
+                        <div class="hidden text-center p-2" data-region="empty-message-container">
+                                    <p class="text-muted mt-2">Pas de conversation privée</p>
+
+                        </div>
+                        <div class="hidden list-group" data-region="content-container">
+                            
+                        </div>
+                        <div class="list-group" data-region="placeholder-container">
+                                    <div class="text-center py-2"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</div>
+
+                        </div>
+                        <div class="w-100 text-center p-3 hidden" data-region="loading-icon-container">
+                            <span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+        
+        <div data-region="view-search" aria-hidden="true" class="h-100 hidden" data-user-id="36853" data-users-offset="0" data-messages-offset="0" style="overflow-y: auto">
+            <div class="hidden" data-region="search-results-container" style="overflow-y: auto">
+                
+                <div class="d-flex flex-column">
+                    <div class="mb-3 bg-white" data-region="all-contacts-container">
+                        <div data-region="contacts-container" class="pt-2">
+                            <h4 class="h6 px-2">Contacts</h4>
+                            <div class="list-group" data-region="list"></div>
+                        </div>
+                        <div data-region="non-contacts-container" class="pt-2 border-top">
+                            <h4 class="h6 px-2">Non contact</h4>
+                            <div class="list-group" data-region="list"></div>
+                        </div>
+                        <div class="text-right">
+                            <button class="btn btn-link text-primary" data-action="load-more-users">
+                                <span data-region="button-text">Charger plus</span>
+                                <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="bg-white" data-region="messages-container">
+                        <h4 class="h6 px-2 pt-2">Messages personnels</h4>
+                        <div class="list-group" data-region="list"></div>
+                        <div class="text-right">
+                            <button class="btn btn-link text-primary" data-action="load-more-messages">
+                                <span data-region="button-text">Charger plus</span>
+                                <span data-region="loading-icon-container" class="hidden"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="hidden p-3 text-center" data-region="no-results-container">Aucun résultat</p>
+                </div>            </div>
+            <div class="hidden" data-region="loading-placeholder">
+                <div class="text-center pt-3 icon-size-4"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</div>
+            </div>
+            <div class="p-3 text-center" data-region="empty-message-container">
+                <p>Rechercher des personnes et des messages</p>
+            </div>
+        </div>        
+        <div class="h-100 hidden bg-white" aria-hidden="true" data-region="view-settings">
+            <div class="hidden" data-region="content-container">
+                
+                <div data-region="settings" class="p-3">
+                    <h3 class="h6 font-weight-bold">Confidentialité</h3>
+                    <p>Vous pouvez choisir qui peut vous envoyer un message personnel</p>
+                    <div data-preference="blocknoncontacts" class="mb-3">
+                            <div class="custom-control custom-radio mb-2">
+                                <input type="radio" name="message_blocknoncontacts" class="custom-control-input" id="block-noncontacts-5e3a6f4d585c05e3a6f4d4e13f18-1" value="1">
+                                <label class="custom-control-label ml-2" for="block-noncontacts-5e3a6f4d585c05e3a6f4d4e13f18-1">
+                                    Mes contacts seulement
+                                </label>
+                            </div>
+                            <div class="custom-control custom-radio mb-2">
+                                <input type="radio" name="message_blocknoncontacts" class="custom-control-input" id="block-noncontacts-5e3a6f4d585c05e3a6f4d4e13f18-0" value="0">
+                                <label class="custom-control-label ml-2" for="block-noncontacts-5e3a6f4d585c05e3a6f4d4e13f18-0">
+                                    Mes contacts et tout le monde dans mes cours
+                                </label>
+                            </div>
+                    </div>
+                
+                    <div class="hidden" data-region="notification-preference-container">
+                        <h3 class="mb-2 mt-4 h6 font-weight-bold">Préférences de notification</h3>
+                    </div>
+                
+                    <h3 class="mb-2 mt-4 h6 font-weight-bold">Général</h3>
+                    <div data-preference="entertosend">
+                        <span class="switch">
+                            <input type="checkbox" id="enter-to-send-5e3a6f4d585c05e3a6f4d4e13f18">
+                            <label for="enter-to-send-5e3a6f4d585c05e3a6f4d4e13f18">
+                                Taper entrée pour envoyer
+                            </label>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div data-region="placeholder-container">
+                
+                <div class="d-flex flex-column p-3">
+                    <div class="w-25 bg-pulse-grey h6" style="height: 18px"></div>
+                    <div class="w-75 bg-pulse-grey mb-4" style="height: 18px"></div>
+                    <div class="mb-3">
+                        <div class="w-100 d-flex mb-3">
+                            <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                        <div class="w-100 d-flex mb-3">
+                            <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                        <div class="w-100 d-flex mb-3">
+                            <div class="bg-pulse-grey rounded-circle" style="width: 18px; height: 18px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                    </div>
+                    <div class="w-50 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                    <div class="mb-4">
+                        <div class="w-100 d-flex mb-2 align-items-center">
+                            <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                            <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                        </div>
+                        <div class="w-100 d-flex mb-2 align-items-center">
+                            <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                            <div class="bg-pulse-grey w-25 ml-2" style="height: 18px"></div>
+                        </div>
+                    </div>
+                    <div class="w-25 bg-pulse-grey h6 mb-3 mt-2" style="height: 18px"></div>
+                    <div class="mb-3">
+                        <div class="w-100 d-flex mb-2 align-items-center">
+                            <div class="bg-pulse-grey w-25" style="width: 18px; height: 27px"></div>
+                            <div class="bg-pulse-grey w-50 ml-2" style="height: 18px"></div>
+                        </div>
+                    </div>
+                </div>            </div>
+        </div>    </div>
+    <div class="footer-container position-relative" data-region="footer-container">
+        
+        <div class="hidden border-top bg-white position-relative" aria-hidden="true" data-region="view-conversation" data-enter-to-send="0">
+            <div class="hidden p-2" data-region="content-messages-footer-container">
+                
+                <div class="d-flex mt-1">
+                    <textarea dir="auto" data-region="send-message-txt" class="form-control bg-light" rows="3" data-auto-rows="" data-min-rows="3" data-max-rows="5" role="textbox" aria-label="Écrire un message" placeholder="Écrire un message" style="resize: none"></textarea>
+                    <button class="btn btn-link btn-icon icon-size-3 ml-1 mt-auto" aria-label="Envoyer message personnel" data-action="send-message">
+                        <span data-region="send-icon-container"><i class="icon fa fa-paper-plane fa-fw " aria-hidden="true"></i></span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden p-2" data-region="content-messages-footer-edit-mode-container">
+                
+                <div class="d-flex p-3 justify-content-end">
+                    <button class="btn btn-link btn-icon my-1 icon-size-4" data-action="delete-selected-messages" data-toggle="tooltip" data-placement="top" title="Supprimer les messages sélectionnés">
+                        <span data-region="icon-container"><i class="icon fa fa-trash fa-fw " aria-hidden="true"></i></span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                        <span class="sr-only">Supprimer les messages sélectionnés</span>
+                    </button>
+                </div>            </div>
+            <div class="hidden bg-secondary p-3" data-region="content-messages-footer-require-contact-container">
+                
+                <div class="p-3 bg-white">
+                    <p data-region="title"></p>
+                    <p class="text-muted" data-region="text"></p>
+                    <button type="button" class="btn btn-primary btn-block" data-action="request-add-contact">
+                        <span data-region="dialogue-button-text">Envoyer une demande de contact</span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden bg-secondary p-3" data-region="content-messages-footer-require-unblock-container">
+                
+                <div class="p-3 bg-white">
+                    <p class="text-muted" data-region="text">Vous avez bloqué cet utilisateur.</p>
+                    <button type="button" class="btn btn-primary btn-block" data-action="request-unblock">
+                        <span data-region="dialogue-button-text">Débloquer l'utilisateur</span>
+                        <span class="hidden" data-region="loading-icon-container"><span class="loading-icon icon-no-margin"><i class="icon fa fa-circle-o-notch fa-spin fa-fw " title="Chargement" aria-label="Chargement"></i></span>
+</span>
+                    </button>
+                </div>
+            </div>
+            <div class="hidden bg-secondary p-3" data-region="content-messages-footer-unable-to-message">
+                
+                <div class="p-3 bg-white">
+                    <p class="text-muted" data-region="text">Vous ne pouvez pas envoyer un message à cet utilisateur</p>
+                </div>
+            </div>
+            <div class="p-2" data-region="placeholder-container">
+                <div class="d-flex">
+                    <div class="bg-pulse-grey w-100" style="height: 80px"></div>
+                    <div class="mx-2 mb-2 align-self-end bg-pulse-grey" style="height: 20px; width: 20px"></div>
+                </div>            </div>
+            <div class="hidden position-absolute" data-region="confirm-dialogue-container" style="top: -1px; bottom: 0; right: 0; left: 0; background: rgba(0,0,0,0.3);"></div>
+        </div>    </div>
+</div>
+    <div id="nav-drawer" data-region="drawer" class="d-print-none moodle-has-zindex closed" aria-hidden="true" tabindex="-1">
+        <nav class="list-group">
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=3971" data-key="coursehome" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="60" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">MU4IN203 - S2</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/user/index.php?id=3971" data-key="participants" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="90" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="3971">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-users fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">Participants</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/badges/view.php?type=2&amp;id=3971" data-key="badgesview" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="70" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="3971">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-shield fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">Badges</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/admin/tool/lp/coursecompetencies.php?courseid=3971" data-key="competencies" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="70" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="3971">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-check-square-o fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">Compétences</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/grade/report/index.php?id=3971" data-key="grades" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="70" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="3971">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-table fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">Notes</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=3971#section-0" data-key="16499" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="3971">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">Généralités</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=3971#section-1" data-key="18732" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="3971">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">Cours</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action active" href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=3971#section-2" data-key="18735" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="1" data-isactive="1" data-hidden="0" data-preceedwithhr="0" data-parent-key="3971">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body font-weight-bold">Travaux pratiques</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=3971#section-3" data-key="19354" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="30" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="3971">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-folder-o fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">Projet</span>
+                    </div>
+                </div>
+            </a>
+        </nav>
+        <nav class="list-group m-t-1">
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/my/" data-key="myhome" data-isexpandable="0" data-indent="0" data-showdivider="1" data-type="1" data-nodetype="1" data-collapse="0" data-forceopen="1" data-isactive="0" data-hidden="0" data-preceedwithhr="0">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-tachometer fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">Tableau de bord</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/?redirect=0" data-key="home" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="70" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="myhome">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-home fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">Accueil du site</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/calendar/view.php?view=month&amp;course=3971" data-key="calendar" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="60" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-calendar fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">Calendrier</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/user/files.php" data-key="privatefiles" data-isexpandable="0" data-indent="0" data-showdivider="0" data-type="70" data-nodetype="0" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="1">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-file-o fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">Fichiers personnels</span>
+                    </div>
+                </div>
+            </a>
+            <div class="list-group-item" data-key="mycourses" data-isexpandable="1" data-indent="0" data-showdivider="0" data-type="0" data-nodetype="1" data-collapse="0" data-forceopen="1" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="myhome">
+                <div class="m-l-0">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body">Mes cours</span>
+                    </div>
+                </div>
+            </div>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=882" data-key="882" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="m-l-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">MU4IN600 - S1</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=2919" data-key="2919" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="m-l-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">MU4IN800 - S1</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=1558" data-key="1558" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="m-l-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">MU4IN200 - S1</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=3096" data-key="3096" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="m-l-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">MU4IN601 - S1</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=3066" data-key="3066" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="m-l-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">MU4IN900 - S1</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=4492" data-key="4492" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="m-l-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">MU4IN204 - S2</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=4230" data-key="4230" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="0" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="m-l-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">MU4IN210 - S2</span>
+                    </div>
+                </div>
+            </a>
+            <a class="list-group-item list-group-item-action " href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=3971" data-key="3971" data-isexpandable="1" data-indent="1" data-showdivider="0" data-type="20" data-nodetype="1" data-collapse="0" data-forceopen="1" data-isactive="0" data-hidden="0" data-preceedwithhr="0" data-parent-key="mycourses">
+                <div class="m-l-1">
+                    <div class="media">
+                        <span class="media-left">
+                            <i class="icon fa fa-graduation-cap fa-fw " aria-hidden="true"></i>
+                        </span>
+                        <span class="media-body ">MU4IN203 - S2</span>
+                    </div>
+                </div>
+            </a>
+        </nav>
+    </div>
+    <footer id="page-footer" class="py-3 bg-dark text-light">
+        <div class="container">
+            <div id="course-footer"></div>
+    
+    
+            <div class="logininfo">Connecté sous le nom «&nbsp;<a href="https://moodle-sciences.upmc.fr/moodle-2019/user/profile.php?id=36853" title="Consulter le profil">Arthur Esquerre-Pourtere</a>&nbsp;» (<a href="https://moodle-sciences.upmc.fr/moodle-2019/login/logout.php?sesskey=P7vk3qkR0K">Déconnexion</a>)</div>
+            <div class="tool_usertours-resettourcontainer"></div>
+            <div class="homelink"><a href="https://moodle-sciences.upmc.fr/moodle-2019/course/view.php?id=3971">MU4IN203 - S2</a></div>
+            <nav class="nav navbar-nav d-md-none">
+                    <ul class="list-unstyled pt-3">
+                                        <li><a href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698#" title="Langue">Français ‎(fr)‎</a></li>
+                                    <li>
+                                        <ul class="list-unstyled ml-3">
+                                                            <li><a href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698&amp;lang=en" title="English ‎(en)‎">English ‎(en)‎</a></li>
+                                                            <li><a href="https://moodle-sciences.upmc.fr/moodle-2019/mod/page/view.php?id=79698&amp;lang=fr" title="Français ‎(fr)‎">Français ‎(fr)‎</a></li>
+                                        </ul>
+                                    </li>
+                    </ul>
+            </nav>
+            <div class="tool_dataprivacy"><a href="https://moodle-sciences.upmc.fr/moodle-2019/admin/tool/dataprivacy/summary.php">Résumé de conservation de données</a></div><a href="https://download.moodle.org/mobile?version=2018120304.07&amp;lang=fr&amp;iosappid=633359593&amp;androidappid=com.moodle.moodlemobile">Obtenir l'app mobile</a>
+            <script type="text/javascript">
+//<![CDATA[
+var require = {
+    baseUrl : 'https://moodle-sciences.upmc.fr/moodle-2019/lib/requirejs.php/1579268390/',
+    // We only support AMD modules with an explicit define() statement.
+    enforceDefine: true,
+    skipDataMain: true,
+    waitSeconds : 0,
+
+    paths: {
+        jquery: 'https://moodle-sciences.upmc.fr/moodle-2019/lib/javascript.php/1579268390/lib/jquery/jquery-3.2.1.min',
+        jqueryui: 'https://moodle-sciences.upmc.fr/moodle-2019/lib/javascript.php/1579268390/lib/jquery/ui-1.12.1/jquery-ui.min',
+        jqueryprivate: 'https://moodle-sciences.upmc.fr/moodle-2019/lib/javascript.php/1579268390/lib/requirejs/jquery-private'
+    },
+
+    // Custom jquery config map.
+    map: {
+      // '*' means all modules will get 'jqueryprivate'
+      // for their 'jquery' dependency.
+      '*': { jquery: 'jqueryprivate' },
+      // Stub module for 'process'. This is a workaround for a bug in MathJax (see MDL-60458).
+      '*': { process: 'core/first' },
+
+      // 'jquery-private' wants the real jQuery module
+      // though. If this line was not here, there would
+      // be an unresolvable cyclic dependency.
+      jqueryprivate: { jquery: 'jquery' }
+    }
+};
+
+//]]>
+</script>
+<script type="text/javascript" src="./MU4IN203 - S2_ Semaine 2 _ TP Qt 1_files/javascript(2).php"></script>
+<script type="text/javascript">
+//<![CDATA[
+require(['core/first'], function() {
+;
+require(["media_videojs/loader"], function(loader) {
+    loader.setUp(function(videojs) {
+        videojs.options.flash.swf = "https://moodle-sciences.upmc.fr/moodle-2019/media/player/videojs/videojs/video-js.swf";
+videojs.addLanguage("fr",{
+ "Audio Player": "Lecteur audio",
+ "Video Player": "Lecteur vidéo",
+ "Play": "Lecture",
+ "Pause": "Pause",
+ "Replay": "Revoir",
+ "Current Time": "Temps actuel",
+ "Duration Time": "Durée",
+ "Remaining Time": "Temps restant",
+ "Stream Type": "Type de flux",
+ "LIVE": "EN DIRECT",
+ "Loaded": "Chargé",
+ "Progress": "Progression",
+ "Progress Bar": "Barre de progression",
+ "progress bar timing: currentTime={1} duration={2}": "{1} de {2}",
+ "Fullscreen": "Plein écran",
+ "Non-Fullscreen": "Fenêtré",
+ "Mute": "Sourdine",
+ "Unmute": "Son activé",
+ "Playback Rate": "Vitesse de lecture",
+ "Subtitles": "Sous-titres",
+ "subtitles off": "Sous-titres désactivés",
+ "Captions": "Sous-titres transcrits",
+ "captions off": "Sous-titres transcrits désactivés",
+ "Chapters": "Chapitres",
+ "Descriptions": "Descriptions",
+ "descriptions off": "descriptions désactivées",
+ "Audio Track": "Piste audio",
+ "Volume Level": "Niveau de volume",
+ "You aborted the media playback": "Vous avez interrompu la lecture de la vidéo.",
+ "A network error caused the media download to fail part-way.": "Une erreur de réseau a interrompu le téléchargement de la vidéo.",
+ "The media could not be loaded, either because the server or network failed or because the format is not supported.": "Cette vidéo n'a pas pu être chargée, soit parce que le serveur ou le réseau a échoué ou parce que le format n'est pas reconnu.",
+ "The media playback was aborted due to a corruption problem or because the media used features your browser did not support.": "La lecture de la vidéo a été interrompue à cause d'un problème de corruption ou parce que la vidéo utilise des fonctionnalités non prises en charge par votre navigateur.",
+ "No compatible source was found for this media.": "Aucune source compatible n'a été trouvée pour cette vidéo.",
+ "The media is encrypted and we do not have the keys to decrypt it.": "Le média est chiffré et nous n'avons pas les clés pour le déchiffrer.",
+ "Play Video": "Lire la vidéo",
+ "Close": "Fermer",
+ "Close Modal Dialog": "Fermer la boîte de dialogue modale",
+ "Modal Window": "Fenêtre modale",
+ "This is a modal window": "Ceci est une fenêtre modale",
+ "This modal can be closed by pressing the Escape key or activating the close button.": "Ce modal peut être fermé en appuyant sur la touche Échap ou activer le bouton de fermeture.",
+ ", opens captions settings dialog": ", ouvrir les paramètres des sous-titres transcrits",
+ ", opens subtitles settings dialog": ", ouvrir les paramètres des sous-titres",
+ ", opens descriptions settings dialog": ", ouvrir les paramètres des descriptions",
+ ", selected": ", sélectionné",
+ "captions settings": "Paramètres des sous-titres transcrits",
+ "subtitles settings": "Paramètres des sous-titres",
+ "descriptions settings": "Paramètres des descriptions",
+ "Text": "Texte",
+ "White": "Blanc",
+ "Black": "Noir",
+ "Red": "Rouge",
+ "Green": "Vert",
+ "Blue": "Bleu",
+ "Yellow": "Jaune",
+ "Magenta": "Magenta",
+ "Cyan": "Cyan",
+ "Background": "Arrière-plan",
+ "Window": "Fenêtre",
+ "Transparent": "Transparent",
+ "Semi-Transparent": "Semi-transparent",
+ "Opaque": "Opaque",
+ "Font Size": "Taille des caractères",
+ "Text Edge Style": "Style des contours du texte",
+ "None": "Aucun",
+ "Raised": "Élevé",
+ "Depressed": "Enfoncé",
+ "Uniform": "Uniforme",
+ "Dropshadow": "Ombre portée",
+ "Font Family": "Famille de polices",
+ "Proportional Sans-Serif": "Polices à chasse variable sans empattement (Proportional Sans-Serif)",
+ "Monospace Sans-Serif": "Polices à chasse fixe sans empattement (Monospace Sans-Serif)",
+ "Proportional Serif": "Polices à chasse variable avec empattement (Proportional Serif)",
+ "Monospace Serif": "Polices à chasse fixe avec empattement (Monospace Serif)",
+ "Casual": "Manuscrite",
+ "Script": "Scripte",
+ "Small Caps": "Petites capitales",
+ "Reset": "Réinitialiser",
+ "restore all settings to the default values": "Restaurer tous les paramètres aux valeurs par défaut",
+ "Done": "Terminé",
+ "Caption Settings Dialog": "Boîte de dialogue des paramètres des sous-titres transcrits",
+ "Beginning of dialog window. Escape will cancel and close the window.": "Début de la fenêtre de dialogue. La touche d'échappement annulera et fermera la fenêtre.",
+ "End of dialog window.": "Fin de la fenêtre de dialogue."
+});
+
+    });
+});;
+
+require(['jquery'], function($) {
+    $('#single_select5e3a6f4d4e13f5').change(function() {
+        var ignore = $(this).find(':selected').attr('data-ignore');
+        if (typeof ignore === typeof undefined) {
+            $('#single_select_f5e3a6f4d4e13f4').submit();
+        }
+    });
+});
+;
+
+require(
+[
+    'jquery',
+    'core_message/message_popover'
+],
+function(
+    $,
+    Popover
+) {
+    var toggle = $('#message-drawer-toggle-5e3a6f4d53ec15e3a6f4d4e13f7');
+    Popover.init(toggle);
+});
+;
+
+require(['jquery', 'message_popup/notification_popover_controller'], function($, controller) {
+    var container = $('#nav-notification-popover-container');
+    var controller = new controller(container);
+    controller.registerEventListeners();
+    controller.registerListNavigationEventListeners();
+});
+;
+
+        require(['jquery'], function($) {
+            $('#jump-to-activity').change(function() {
+                if (!$(this).val()) {
+                    return false;
+                }
+                $('#url_select_f5e3a6f4d4e13f17').submit();
+            });
+        });
+    ;
+
+require(['jquery', 'core_message/message_drawer'], function($, MessageDrawer) {
+    var root = $('#message-drawer-5e3a6f4d585c05e3a6f4d4e13f18');
+    MessageDrawer.init(root);
+});
+;
+
+require(['jquery'], function($) {
+    $('#single_select5e3a6f4d4e13f20').change(function() {
+        var ignore = $(this).find(':selected').attr('data-ignore');
+        if (typeof ignore === typeof undefined) {
+            $('#single_select_f5e3a6f4d4e13f19').submit();
+        }
+    });
+});
+;
+
+require(['theme_boost/loader']);
+require(['theme_boost/drawer'], function(mod) {
+    mod.init();
+});
+;
+require(["core/notification"], function(amd) { amd.init(681501, []); });;
+require(["core/log"], function(amd) { amd.setConfig({"level":"warn"}); });;
+require(["core/page_global"], function(amd) { amd.init(); });
+});
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+M.str = {"moodle":{"lastmodified":"Modifi\u00e9 le","name":"Nom","error":"Erreur","info":"Information","yes":"Oui","no":"Non","cancel":"Annuler","confirm":"Confirmer","areyousure":"En \u00eates-vous bien s\u00fbr\u00a0?","closebuttontitle":"Fermer","unknownerror":"Erreur inconnue"},"repository":{"type":"Type","size":"Taille","invalidjson":"Cha\u00eene JSON non valide","nofilesattached":"Aucun fichier joint","filepicker":"S\u00e9lecteur de fichiers","logout":"D\u00e9connexion","nofilesavailable":"Aucun fichier disponible","norepositoriesavailable":"D\u00e9sol\u00e9, aucun de vos d\u00e9p\u00f4ts actuels ne peut retourner de fichiers dans le format requis.","fileexistsdialogheader":"Le fichier existe","fileexistsdialog_editor":"Un fichier de ce nom a d\u00e9j\u00e0 \u00e9t\u00e9 joint au texte que vous modifiez.","fileexistsdialog_filemanager":"Un fichier de ce nom a d\u00e9j\u00e0 \u00e9t\u00e9 joint","renameto":"Renommer \u00e0 \u00ab\u00a0{$a}\u00a0\u00bb","referencesexist":"Ce fichier est utilis\u00e9 comme source par {$a} alias.","select":"S\u00e9lectionnez"},"admin":{"confirmdeletecomments":"Voulez-vous vraiment supprimer des commentaires\u00a0?","confirmation":"Confirmation"}};
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+(function() {Y.use("moodle-filter_mathjaxloader-loader",function() {M.filter_mathjaxloader.configure({"mathjaxconfig":"\nMathJax.Hub.Config({\n    config: [\"Accessible.js\", \"Safe.js\"],\n    errorSettings: { message: [\"!\"] },\n    skipStartupTypeset: true,\n    messageStyle: \"none\"\n});\n","lang":"fr"});
+});
+ M.util.js_pending('random5e3a6f4d4e13f1'); Y.on('domready', function() { var activities = document.querySelectorAll('.section-cm-edit-actions div[role="menu"]');
+    if (activities) {
+        for (var i = 0; i < activities.length; i++) {
+            var ul = activities[i];
+            var owner = ul.parentNode.parentNode.parentNode.getAttribute('data-owner');
+            if (owner) {
+                var id = owner.replace(/^#module-/, '');
+                ul.insertAdjacentHTML('beforeend', "<a class=\"dropdown-item editing_notifications menu-action cm-edit-action\" data-action=\"notifications\" role=\"menuitem\" href=\"https:\/\/moodle-sciences.upmc.fr\/moodle-2019\/local\/resourcenotif\/resourcenotif.php?id=123XYZ321\" title=\"Notifications\"><i class=\"icon fa fa-envelope-o fa-fw \"  title=\"Notifications\" aria-label=\"Notifications\"><\/i><span class=\"menu-action-text\">Notifications<\/span><\/a>".replace('123XYZ321', id));
+            }
+        }
+    };  M.util.js_complete('random5e3a6f4d4e13f1'); });
+ M.util.js_pending('random5e3a6f4d4e13f2'); Y.on('domready', function() { var activities = document.querySelectorAll('.section-cm-edit-actions ul[role="menu"]');
+    if (activities) {
+        for (var i = 0; i < activities.length; i++) {
+            var ul = activities[i];
+            var owner = ul.parentNode.getAttribute('data-owner');
+            if (owner) {
+                var id = owner.replace(/^#module-/, '');
+                ul.insertAdjacentHTML('beforeend', "<li role=\"presentation\"><a class=\"dropdown-item editing_notifications menu-action cm-edit-action\" data-action=\"notifications\" role=\"menuitem\" href=\"https:\/\/moodle-sciences.upmc.fr\/moodle-2019\/local\/resourcenotif\/resourcenotif.php?id=123XYZ321\" title=\"Notifications\"><i class=\"icon fa fa-envelope-o fa-fw \"  title=\"Notifications\" aria-label=\"Notifications\"><\/i><span class=\"menu-action-text\">Notifications<\/span><\/a><\/li>".replace('123XYZ321', id));
+            }
+        }
+    };  M.util.js_complete('random5e3a6f4d4e13f2'); });
+M.util.help_popups.setup(Y);
+ M.util.js_pending('random5e3a6f4d4e13f21'); Y.on('domready', function() { M.util.js_complete("init");  M.util.js_complete('random5e3a6f4d4e13f21'); });
+})();
+//]]>
+</script>
+
+        </div>
+    </footer></div><div id="yui3-css-stamp" style="position: absolute !important; visibility: hidden !important" class=""></div>
+
+
+</body></html>
